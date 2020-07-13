@@ -17,7 +17,7 @@ export const  sortedDataTableSelector = createSelector(
      const rezult = dataset.filter((data) => {
       return (selected !== null)  ? (!selected.value || selected.value === data.id ) : data
      })
-     return  orderBy(rezult, [head], isAsc === true  ? ['asc'] : ['desc'])
+     return  orderBy(rezult, [head], isAsc ? ['asc'] : ['desc'])
 
   }
 )

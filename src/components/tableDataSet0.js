@@ -28,18 +28,20 @@ function TableData(props){
     i !== 'id' && heads.push(i)
   }
 
+
   const tableHeads = heads.map((head, index)=>{
     return(
       <th scope="col"
-          key={index}>
+          key={index}
 
+      >
         <div className='table-heads'>
           {head}
           {head === 'Mass' && (
-            <button className='sorting-up-down'
-                  onClick={() => sortTable(head, !props.isAsc)}>
-              <div className={!props.isAsc ? "arrow-down" : "arrow-up"}></div>
-            </button>
+            <span className='arrow-up-down'>
+              <div className="arrow-up" onClick={() => sortTable(head, true)}></div>
+          
+            </span>
           )}
         </div>
       </th>
@@ -53,10 +55,10 @@ function TableData(props){
           <td className="index-column">{index}</td>
           <td className="name-column">{Name}</td>
           <td className="mass-column">{Mass}oz</td>
-          <td className="">{Family}</td>
-          <td className="">{Binomen}</td>
-          <td className="">{Classification}</td>
-          <td className="">{Status}</td>
+          <td>{Family}</td>
+          <td>{Binomen}</td>
+          <td>{Classification}</td>
+          <td>{Status}</td>
         </tr>
       )
     })
@@ -75,7 +77,6 @@ function TableData(props){
 
 export default connect((state) =>{
   return {
-    isAsc: state.datasort.isAsc,
     dataset: sortedDataTableSelector(state)
   }
 }, { sortingData }

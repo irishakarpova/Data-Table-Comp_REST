@@ -22,6 +22,7 @@ class SelectedFilter extends Component{
   render(){
     const placeholder = "Show All..."
     return(
+      <div className='select-form-bg'>
       <Select options={this.options}
               value={this.props.selected}
               onChange={this.handleChange}
@@ -29,6 +30,7 @@ class SelectedFilter extends Component{
               styles={styles}
               isClearable
       />
+  </div>
     )
   }
 }

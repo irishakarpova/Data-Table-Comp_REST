@@ -23,6 +23,7 @@ export const styles = {
       ':hover': {color:'#DA64EA'},
     }),
   option: () => ({
+    zIndex:20,
     color: '#fff',
     borderRadius: '0',
     backgroundColor: 'rgba(218,100,224,1)',
