@@ -8,14 +8,12 @@
   background: #fff;
 }
 .head-for-table{
-  1height: 100px;
   background: linear-gradient(90deg, rgba(218,100,224,1) 0%, rgba(229,113,113,1) 100%);
 }
 .head-for-table h1{
   padding-top: 30px;
   margin: 0;
-  line-height: 38px;
-  margin-left: -2px;
+  line-height: 33px;
   color: #fff;
   font-family: 'Abril Fatface', cursive;
   font-size: 44px;
@@ -37,5 +35,13 @@ thead{
 @media(max-width: 700px){
   .select-form{
     width: 100%;
+  }
+  .head-for-table h1{
+    padding-top: 5px;
+    padding-left: 20px;
+    line-height: 33px;
+    color: #fff;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 34px;
   }
 }
