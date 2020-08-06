@@ -52,7 +52,7 @@
   min-width: 120px;
 }
 .table td{
-  padding: 15px 10px !important;
+  padding: 15px 10px 15px 22px !important;
 }
 tr:hover,
 .table-striped tbody tr:nth-of-type(odd):hover  {
@@ -61,6 +61,7 @@ tr:hover,
 .table td, .table th {
   border-top: none !important;
 }
+
 
 table th:nth-child(2){
   position: sticky;

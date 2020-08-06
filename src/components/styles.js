@@ -5,11 +5,7 @@ export const styles = {
     borderRadius:" 0 !important",
     ':hover': {border:'1px solid #DA64EA'},
   }),
-   clearIndicator: styles =>({
-     color: '#DA64EA',
-     paddingBottom: '2px',
-     paddingRight: '10px'
-   }),
+
   placeholder: styles => ({...styles,
      fontSize:'12px',
      color:'#DA64EA',

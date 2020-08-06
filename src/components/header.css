@@ -44,4 +44,10 @@ thead{
     font-family: 'Abril Fatface', cursive;
     font-size: 34px;
   }
+  .select-form{
+    position: absolute;
+    margin-top: 35px;
+    z-index: 10;
+    width: 350px;
+  }
 }
