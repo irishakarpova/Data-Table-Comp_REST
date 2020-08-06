@@ -98,3 +98,124 @@ export default connect((state) =>{
 
 ```
 
+<h3>STEP 2. Sortable List</h3>
+<p>I started by adding UI elements.</p>
+
+```javaScript
+function TableData(props){
+  function sortTable(head, isAsc){
+    props.sortingData(head, isAsc)
+  }
+ 
+  const tableHeads = heads.map((head, index)=>{
+    return(
+      <th scope="col" key={index}>
+        <div className='table-heads'>
+          {head}
+          {head === 'Mass' && (
+            <span className='arrow-up-down'>
+              <div className="arrow-up" onClick={() => sortTable(head, true)}></div>
+              <div className="arrow-down" onClick={() => sortTable(head, false)}></div>
+            </span>
+          )}
+        </div>
+      </th>
+    )
+  })
+  
+```
+<p>First argument MapStateToProps reads the state using a selector created by Reselect’s createSelector function. This function remembers the arguments passed-in the last time it was invoked and doesn’t recalculate if the arguments are the same. 
+
+The second argument to connect() I pass an object {sortingData} for changing the current state store. 
+</p>
+
+```javaScript
+export default connect((state) =>{
+  return {
+    dataset: sortedDataTableSelector(state)
+  }
+}, { sortingData }
+ 
+)(TableData)
+
+```
+<h6>Selector</h6>
+<p>For sorting data, here I use the 'Lodash' library. This library provides convenience and less code way.</p>
+
+```javaScript
+import { createSelector } from 'reselect'
+import { orderBy } from "lodash"
+ 
+export const datasetSelector = state => state.dataset;
+export const headSelector = state => state.datasort.head;
+export const isAscSelector = state => state.datasort.isAsc;
+ 
+export const  sortedDataTableSelector = createSelector(
+  datasetSelector,
+  headSelector,
+  isAscSelector,
+ 
+  (dataset, head, isAsc) => {
+     return  orderBy(dataset, [head], isAsc === true  ? ['asc'] : ['desc'])
+  }
+)
+
+```
+
+<p>In case I do a sorting function on Native javascript, I need to return a new object, not change my dataset by reference.</p>
+
+```javaScript
+    return  rezult.slice().sort((a, b) => {
+            console.log(a[head])
+ 
+              let valA = a[head]
+              let valB = b[head]
+ 
+              if (valA > valB) {
+                return [isAsc ? 1 : -1]
+              }
+ 
+              if (valA < valB) {
+                return isAsc ? -1 : 1
+              }
+              return 0
+          })
+          
+```
+
+<h6>AC</h6>
+
+```javaScript
+import {SORT_UP_DOWN} from ‘../constants'
+ 
+export function sortingData(head, isAsc){
+  return{
+    type: SORT_UP_DOWN,
+    payload: {head, isAsc}
+  }
+}
+
+```
+<h6>REDUCER</h6>
+
+```javaScript
+import {SORT_UP_DOWN} from '../constants'
+ 
+const dafaultdata = {
+  head: null,
+  isAsc: null
+}
+ 
+export default (state = dafaultdata , action) => {
+  const { type, payload } = action
+ 
+  switch (type){
+    case SORT_UP_DOWN:
+      return{...state, head: payload.head, isAsc: payload.isAsc}
+    default:
+      return state
+  }
+}
+
+```
+
