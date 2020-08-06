@@ -219,3 +219,117 @@ export default (state = dafaultdata , action) => {
 
 ```
 
+<h3>STEP 3. Select component</h3>
+<p>I add the <span><a href='https://react-select.com/home'>React Select component</a></span> for picking from a headers` list.
+Start by installing react-select.</p>
+
+```javaScript
+import Select from 'react-select'
+ 
+class SelectedFilter extends Component{
+ 
+  handleChange = (selected) => {
+    this.props.changeSelection(selected)
+  }
+ 
+  get options(){
+    return this.props.dataset.map( data => ({
+      label: data.Name,
+      value: data.id
+    }))
+  }
+ 
+  render(){
+    const placeholder = "Show All..."
+    return(
+      <Select options={this.options}
+              value={this.props.selected}
+              onChange={this.handleChange}
+              placeholder={placeholder}
+              styles={styles}
+              isClearable
+      />
+    )
+  }
+}
+ 
+export default connect(
+  (state) =>({
+    dataset: datasetSelector(state),
+    selected: selectedArticleSelector(state)
+  }), {changeSelection}
+)(SelectedFilter)
+
+```
+
+<p>As previous components, the SelectedFilter component subscribes to the state Store using a selector.
+Here, Component reads state from the 'dataset' reducer and ‘selected'.
+</p>
+<h6>REDUCER</h6>
+
+```javaScript
+ 
+const dafaultFilters = {
+  selected: []
+}
+ 
+export default (filters = dafaultFilters , action) => {
+  const {type, payload} = action
+ 
+  switch (type){
+    case CHANGE_SELECTION:
+       return {...filters, selected: payload.selected}
+    default:
+      return filters
+  }
+}
+
+```
+
+<h6>SELECTOR</h6>
+
+```javaScript
+import {createSelector} from 'reselect'
+import {orderBy} from "lodash"
+ 
+export const datasetSelector = state => state.dataset;
+export const headSelector = state => state.datasort.head;
+export const isAscSelector = state => state.datasort.isAsc;
+export const selectedArticleSelector = state => state.filters.selected
+ 
+export const  sortedDataTableSelector = createSelector(
+ 
+  datasetSelector,
+  headSelector,
+  isAscSelector,
+  selectedArticleSelector,
+  (dataset, head, isAsc, selected) => {
+ 
+     const rezult = dataset.filter((data) => {
+      return (selected !== null)  ? (!selected.value || selected.value === data.id ) : data
+     })
+     return  orderBy(rezult, [head], isAsc === true  ? ['asc'] : ['desc'])
+ 
+  }
+)
+```
+
+<h6>AC</h6>
+
+```javaScript
+export function changeSelection(selected){
+  return{
+    type: CHANGE_SELECTION,
+    payload: {selected}
+  }
+}
+```
+
+<p>The code in action is responsible for handling the button click. It activates an Action Creator that dispatches action to Reducer. 
+Reducer creates a new state and sends it to the Store. In its turn the Store calls all subscribers about changing state.
+ 
+Selector code is in charge of sorting and selecting data from the state  Store, depending on the parameters that came from the reducer.
+ 
+Now data ready to render in Component.
+</p>
+
