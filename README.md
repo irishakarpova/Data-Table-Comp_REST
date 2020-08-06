@@ -1,4 +1,4 @@
-<h1>Building a Data Table Component in React/Redux. < br />REST API</h1>
+<h1>Building a Data Table Component in React/Redux. <br />REST API</h1>
 <p>Building and developing data tables is a common challenge in my experience.
 In this story, I am going to build a data table with sorting and easy selecting. 
 </p>
