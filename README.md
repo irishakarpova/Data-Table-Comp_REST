@@ -1,6 +1,6 @@
 <h1>Building a Data Table Component in React/Redux. <br />REST API</h1>
 
-<img src="desc.png" width="350" title="hover text">
+<img src="desc.png" width="350" title="description">
 
 
 
