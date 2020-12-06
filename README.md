@@ -6,9 +6,10 @@
 
 
 
-<p>Building and developing data tables is a common challenge in my experience.
-In this story, I am going to build a data table with sorting and easy selecting. 
-</p>
+For Consuming REST APIs in a React Application, I use Redux library to create Store witch serves for the most part as one Single Source of Truth. 
+There are different other ways to approach it. In each case, we evaluate which approach is better. 
+In my experience, the Redux library shows a convenient approach and good results on scale projects.  
+
 <h3>STEP 1. Creating A Table With React/Redux</h3>
 <p>Since multiple components read and simultaneously output the same data, I decided to use the Redux state manager for keeping an actual state of a data array for all components.</p>
 
