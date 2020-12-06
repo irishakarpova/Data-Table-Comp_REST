@@ -6,8 +6,9 @@
 
 
 
-For Consuming REST APIs in a React Application, I use Redux library to create Store witch serves for the most part as one Single Source of Truth. 
-There are different other ways to approach it. In each case, we evaluate which approach is better. 
+When Consuming REST APIs in a React Application, I use the Redux library to share data between components. 
+There are different other ways to approach it. 
+In each case, we evaluate which approach is better. 
 In my experience, the Redux library shows a convenient approach and good results on scale projects.  
 
 <h3>STEP 1. Creating A Table With React/Redux</h3>
