@@ -6,10 +6,9 @@
 
 
 
-<p>When Consuming REST APIs in a React Application, I use the Redux library to share data between components.<br>
-There are different other ways to approach it.
-In each case, we evaluate which approach is better.<br>
-In my experience, the Redux library shows a convenient approach and good results on scale projects.  
+<p>When Consuming REST APIs in a React Application, sometimes, I found it convenient to use the Redux library to share data between components.<br>
+There are different other ways to approach it. In each case, we evaluate which approach is better.<br>
+In my experience, the Redux library shows a convenient approach and good results on scale projects.</p>
 
 <h3>STEP 1. Creating A Table With React/Redux</h3>
 <p>Since multiple components read and simultaneously output the same data, I decided to use the Redux state manager for keeping an actual state of a data array for all components.</p>
