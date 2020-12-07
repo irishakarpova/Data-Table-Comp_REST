@@ -173,16 +173,12 @@ export const  sortedDataTableSelector = createSelector(
 <p>In case I do a sorting function on Native javascript, I need to return a new object, not change my dataset by reference.</p>
 
 ```javaScript
-    return  rezult.slice().sort((a, b) => {
-            console.log(a[head])
- 
+    return  rezult.slice().sort((a, b) => { 
               let valA = a[head]
               let valB = b[head]
- 
               if (valA > valB) {
                 return [isAsc ? 1 : -1]
               }
- 
               if (valA < valB) {
                 return isAsc ? -1 : 1
               }
