@@ -31,7 +31,7 @@ ReactDOM.render(
   , document.getElementById(‘root’));
 
 ```
-<p>I prefer to use the PropTypes library to set the required type of props. Type-checking will warn if accepted a type different from the intended props.</p>
+<p>I use the PropTypes library to set the necessary type of props. Type-checking will warn if we pass a different type from the intended.</p>
 
 ```javaScript
 import PropTypes from 'prop-types'
@@ -50,7 +50,7 @@ TableData.propTypes = {
 
 ```
 
-<p>With the Connect function I read the dataset from Redux Store and render the data in a table.</p>
+<p>With the Connect function, I read the dataset from Redux Store and render the data in a table.</p>
 
 ```javaScript
 import React from 'react'
@@ -134,8 +134,7 @@ function TableData(props){
   })
   
 ```
-<p>First argument MapStateToProps reads the state using a selector created by Reselect’s createSelector function. This function remembers the arguments passed-in the last time it was invoked and doesn’t recalculate if the arguments are the same. 
-
+<p>This function remembers the arguments passed-in the last time it was invoked and will not recalculate it if the same.<br> 
 The second argument to connect() I pass an object {sortingData} for changing the current state store. 
 </p>
 
@@ -172,7 +171,7 @@ export const  sortedDataTableSelector = createSelector(
 
 ```
 
-<p>In case I do a sorting function on Native javascript, I need to return a new object, not change my dataset by reference.</p>
+<p>If I use pure javascript, I need to return a new object, not change the current dataset</p>
 
 ```javaScript
     return  rezult.slice().sort((a, b) => { 
@@ -331,8 +330,8 @@ export function changeSelection(selected){
 }
 ```
 
-<p>The code in action is responsible for handling the button click. It activates an Action Creator that dispatches action to Reducer. 
-Reducer creates a new state and sends it to the Store. In its turn the Store calls all subscribers about changing state.
+<p>The code in action is responsible for handling the button click. It activates an action that dispatches to a coincident Reducer. 
+Reducer creates a new state and sends it to the Store. In its turn, the Store calls all subscribers about changing the current state.
  
 Selector code is in charge of sorting and selecting data from the state  Store, depending on the parameters that came from the reducer.
  
