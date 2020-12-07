@@ -1,5 +1,5 @@
-<h1>Building a Data Table Component in React/Redux. <br />REST API</h1>
-
+<h1>Share data between components with Redux</h1>
+ 
 <img src="desc.png" width="350" title="description">
 
 
