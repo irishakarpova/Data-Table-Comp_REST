@@ -1,9 +1,7 @@
 <h1>Share data between components with Redux</h1>
 <p>I am going to build data table component that uses Select-control.<br>
- Here, I use REST API for integration with server-side.
-</p>
+REST API for integration with server-side.</p>
 
- 
 <img src="desc.png" width="350" title="description">
 
 
