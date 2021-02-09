@@ -18,6 +18,7 @@
     "reselect": "^4.0.0"
   },
   "scripts": {
+    "compile": "NODE_ENV=production babel src --out-dir lib --copy-files --extensions '.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,5 +38,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/preset-react": "^7.12.13"
   }
 }
