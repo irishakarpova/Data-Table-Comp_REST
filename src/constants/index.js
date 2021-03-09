@@ -1,2 +1,2 @@
-export const SORT_UP_DOWN = 'SORT_UP_DOWN'
-export const CHANGE_SELECTION = 'CHANGE_SELECTION'
+export const SORT_UP_DOWN = 'SORT_UP_DOWN';
+export const CHANGE_SELECTION = 'CHANGE_SELECTION';

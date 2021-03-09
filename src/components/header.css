@@ -19,9 +19,13 @@
   font-size: 44px;
 }
 
-thead{
+.bgColor{
   background: linear-gradient(90deg, rgba(218,100,224,1) 0%, rgba(229,113,113,1) 100%);
 }
+.bgColorBody{
+  background: #fff;
+}
+
 .select-form-bg{
   position: relative;
 
