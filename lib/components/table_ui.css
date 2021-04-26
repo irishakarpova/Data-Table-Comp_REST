@@ -66,7 +66,6 @@ tr:hover,
 table th:nth-child(2) {
   position: sticky;
   position: -webkit-sticky;
-  background-color: rgba(218, 100, 224, 1);
   z-index: 1;
   left: 0px;
 }
