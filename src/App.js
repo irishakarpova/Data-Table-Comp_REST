@@ -1,7 +1,6 @@
 import React from 'react';
 import TableData from './components/tableDataSet';
 import Header from './components/header';
-import './App.css';
 import store from './store';
 import { Provider } from 'react-redux';
 
