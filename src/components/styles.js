@@ -1,7 +1,6 @@
 export const styles = {
   control: (styles) => ({
     ...styles,
-    backgroundColor: 'white',
     border: 'none !important',
     borderRadius: ' 0 !important',
     ':hover': { border: '1px solid #DA64EA' },

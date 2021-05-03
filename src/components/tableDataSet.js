@@ -62,8 +62,9 @@ function TableData(props) {
   return (
     <div className="table-responsive">
       <table className="table table-striped bgColor">
-        <tr>{tableHeads}</tr>
-
+        <thead>
+          <tr>{tableHeads}</tr>
+        </thead>
         <tbody className="bgColorBody">{tableCells}</tbody>
       </table>
     </div>
