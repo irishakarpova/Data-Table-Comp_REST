@@ -1,4 +1,4 @@
 body {
-  color: inherit !important;
-  background-color: inherit !important;
+  background-color: transparent !important;
+  color: none !important;
 }
