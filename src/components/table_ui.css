@@ -44,6 +44,7 @@
 }
 .name-column {
   font-weight: bold;
+  background: #db66e1ff;
 }
 .index-column {
   color: #838383;

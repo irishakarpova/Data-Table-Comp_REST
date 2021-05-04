@@ -49,9 +49,7 @@ function TableData(props) {
     return (
       <tr key={id}>
         <td className="index-column">{index}</td>
-        <td className="name-column" style={{ background: rgba(218, 100, 224, 1) }}>
-          {Name}
-        </td>
+        <td className="name-column">{Name}</td>
         <td className="mass-column">{Mass}oz</td>
         <td className="">{Family}</td>
         <td className="">{Binomen}</td>
