@@ -32,7 +32,7 @@
 .arrow-down:hover {
   border-top: 6px solid #fff;
 }
-.sorting-up-down {
+.bootwrap .sorting-up-down {
   position: absolute;
   margin-left: -50px;
   margin-top: -2px;
