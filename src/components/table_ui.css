@@ -64,12 +64,6 @@ tr:hover,
   border-top: none !important;
 }
 
-table th:nth-child(2) {
-  position: sticky;
-  position: -webkit-sticky;
-  z-index: 100;
-  left: 0px;
-}
 table td:nth-child(2) {
   position: sticky;
   position: -webkit-sticky;

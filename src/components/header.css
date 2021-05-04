@@ -11,7 +11,7 @@
 }
 .head-for-table h1 {
   padding-top: 30px;
-  margin: 0;
+  margin-bottom: -0.55rem !important;
   line-height: 33px;
   color: #fff;
   font-family: 'Abril Fatface', cursive;
