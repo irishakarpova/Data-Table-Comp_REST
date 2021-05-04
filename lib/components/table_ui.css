@@ -44,7 +44,6 @@
 }
 .name-column {
   font-weight: bold;
-  background: #db66e1ff;
 }
 .index-column {
   color: #838383;
@@ -64,6 +63,13 @@ tr:hover,
   border-top: none !important;
 }
 
+table th:nth-child(2) {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 1;
+  left: 0px;
+  background: #db66e1ff;
+}
 table td:nth-child(2) {
   position: sticky;
   position: -webkit-sticky;
