@@ -1,4 +1,4 @@
-.table-heads {
+.tableHeads {
   position: relative;
   display: inline-block;
   padding: 3px 10px;
@@ -42,7 +42,7 @@
   border: none;
   border-radius: 4px;
 }
-.name-column {
+.nameColumn {
   font-weight: bold;
 }
 .index-column {
@@ -63,13 +63,14 @@ tr:hover,
   border-top: none !important;
 }
 
-table th:nth-child(2) {
+.tableData table th:nth-child(2) {
   position: sticky;
   position: -webkit-sticky;
   z-index: 1;
   left: 0px;
   background: #db66e1ff;
 }
+
 table td:nth-child(2) {
   position: sticky;
   position: -webkit-sticky;

@@ -32,7 +32,7 @@ function TableData(props) {
   const tableHeads = heads.map((head, index) => {
     return (
       <th scope="col" key={index}>
-        <div className="table-heads">
+        <div className="tableHeads">
           {head}
           {head === 'Mass' && (
             <button className="sorting-up-down" onClick={() => sortTable(head, !props.isAsc)}>
@@ -49,7 +49,7 @@ function TableData(props) {
     return (
       <tr key={id}>
         <td className="index-column">{index}</td>
-        <td className="name-column">{Name}</td>
+        <td className="test nameColumn">{Name}</td>
         <td className="mass-column">{Mass}oz</td>
         <td className="">{Family}</td>
         <td className="">{Binomen}</td>
@@ -60,7 +60,7 @@ function TableData(props) {
   });
 
   return (
-    <div className="table-responsive">
+    <div className="table-responsive tableData">
       <table className="table table-striped bgColor">
         <thead>
           <tr>{tableHeads}</tr>
