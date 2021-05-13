@@ -54,7 +54,7 @@
 .table td {
   padding: 15px 10px 15px 22px !important;
 }
-tr:hover,
+.tableData tr:hover,
 .table-striped tbody tr:nth-of-type(odd):hover {
   background-color: rgba(218, 100, 224, 0.3);
 }
@@ -71,7 +71,7 @@ tr:hover,
   background: #db66e1ff;
 }
 
-table td:nth-child(2) {
+.tableData table td:nth-child(2) {
   position: sticky;
   position: -webkit-sticky;
   z-index: 1;
