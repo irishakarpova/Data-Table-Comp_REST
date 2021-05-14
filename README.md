@@ -1,7 +1,17 @@
-<h1>Building a Data Table Component in React/Redux. <br />REST API</h1>
-<p>Building and developing data tables is a common challenge in my experience.
-In this story, I am going to build a data table with sorting and easy selecting. 
-</p>
+<h1>Share data between components with Redux</h1>
+<p>I am going to build data table component that uses Select-control.<br>
+REST API for integration with server-side.</p>
+
+<img src="desc.png" width="350" title="description">
+
+
+
+
+
+<p>When Consuming REST APIs in a React Application, sometimes, I found it convenient to use the Redux library to share data between components.<br>
+There are different other ways to approach it. In each case, we evaluate which approach is better.<br>
+In my experience, the Redux library shows a convenient approach and good results on scale projects.</p>
+
 <h3>STEP 1. Creating A Table With React/Redux</h3>
 <p>Since multiple components read and simultaneously output the same data, I decided to use the Redux state manager for keeping an actual state of a data array for all components.</p>
 
@@ -21,7 +31,7 @@ ReactDOM.render(
   , document.getElementById(‘root’));
 
 ```
-<p>I prefer to use the PropTypes library to set the required type of props. Type-checking will warn if accepted a type different from the intended props.</p>
+<p>I use the PropTypes library to set the necessary type of props. Type-checking will warn if we pass a different type from the intended.</p>
 
 ```javaScript
 import PropTypes from 'prop-types'
@@ -40,7 +50,7 @@ TableData.propTypes = {
 
 ```
 
-<p>With the Connect function I read the dataset from Redux Store and render the data in a table.</p>
+<p>With the Connect function, I read the dataset from Redux Store and render the data in a table.</p>
 
 ```javaScript
 import React from 'react'
@@ -124,8 +134,7 @@ function TableData(props){
   })
   
 ```
-<p>First argument MapStateToProps reads the state using a selector created by Reselect’s createSelector function. This function remembers the arguments passed-in the last time it was invoked and doesn’t recalculate if the arguments are the same. 
-
+<p>This function remembers the arguments passed-in the last time it was invoked and will not recalculate it if the same.<br> 
 The second argument to connect() I pass an object {sortingData} for changing the current state store. 
 </p>
 
@@ -162,19 +171,15 @@ export const  sortedDataTableSelector = createSelector(
 
 ```
 
-<p>In case I do a sorting function on Native javascript, I need to return a new object, not change my dataset by reference.</p>
+<p>If I use pure javascript, I need to return a new object, not change the current dataset</p>
 
 ```javaScript
-    return  rezult.slice().sort((a, b) => {
-            console.log(a[head])
- 
+    return  rezult.slice().sort((a, b) => { 
               let valA = a[head]
               let valB = b[head]
- 
               if (valA > valB) {
                 return [isAsc ? 1 : -1]
               }
- 
               if (valA < valB) {
                 return isAsc ? -1 : 1
               }
@@ -325,8 +330,8 @@ export function changeSelection(selected){
 }
 ```
 
-<p>The code in action is responsible for handling the button click. It activates an Action Creator that dispatches action to Reducer. 
-Reducer creates a new state and sends it to the Store. In its turn the Store calls all subscribers about changing state.
+<p>The code in action is responsible for handling the button click. It activates an action that dispatches to a coincident Reducer. 
+Reducer creates a new state and sends it to the Store. In its turn, the Store calls all subscribers about changing the current state.
  
 Selector code is in charge of sorting and selecting data from the state  Store, depending on the parameters that came from the reducer.
  
